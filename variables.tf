@@ -13,7 +13,7 @@ variable "logging_level" {
 
 variable "guardrail_policies" {
   type        = list(string)
-  description = "The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ."
+  description = "The list of IAM policy ARNs that are applied as channel guardrails"
   default     = []
 }
 
@@ -28,6 +28,12 @@ variable "slack_workspace_id" {
 variable "sns_topic_arns" {
   type        = list(string)
   description = "The ARNs of the SNS topics that deliver notifications to AWS Chatbot."
+}
+
+variable "user_role_required" {
+  type = bool
+  description = "Enables use of a user role requirement in your chat configuration"
+  default = false
 }
 
 variable "tags" {
