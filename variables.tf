@@ -11,6 +11,12 @@ variable "logging_level" {
   default     = "ERROR"
 }
 
+variable "guardrail_policies" {
+  type        = list(string)
+  description = "The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ."
+  default     = []
+}
+
 variable "slack_channel_id" {
   description = "The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ."
 }
